@@ -5,8 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Is paid</th>
       <th>Table</th>
+      <th>Total</th>
+      <th>Is paid</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,16 +15,15 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.is_paid %></td>
         <td><%= order.table_id %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= order.total %></td>
+        <td><%= order.is_paid %></td>
+        <td><%= link_to 'Show', table_order_path(order.table, order) %></td>
+        <td><%= link_to 'Edit', edit_table_order_path(order.table, order) %></td>
+        <td><%= link_to 'Destroy', table_order_path(order.table, order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Order', new_order_path %>
