@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :orders
-  resources :tables
+  
+  resources :tables do
+    resources :orders
+  end
   
   root 'tables#index'
   
