@@ -4,18 +4,30 @@ This app can help you (barely) run a simple restaurant.
 
 * Ruby version: 2.3.4p301
 
-* System dependencies
+* Rails version: 5.1.6
 
-* Configuration
+## Getting started
 
-* Database creation
+To get started with the app, clone the repo and then install the needed gems:
 
-* Database initialization
+```
+$ bundle install --without production
+```
 
-* How to run the test suite
+Next, migrate the database:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails db:migrate
+```
 
-* Deployment instructions
+Finally, run the test suite to verify that everything is working correctly:
 
-* ...
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app!
+
+```
+$ rails server
+```
