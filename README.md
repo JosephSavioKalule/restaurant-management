@@ -1,11 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app can help you (barely) run a simple restaurant.
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby version: 2.3.4p301
 
 * System dependencies
 
