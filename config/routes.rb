@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   
   root 'tables#index'
   
+  get '/orders', to: 'orders#index'
+  
 end
