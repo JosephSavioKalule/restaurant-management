@@ -24,5 +24,28 @@ class EdiblesControllerTest < ActionDispatch::IntegrationTest
     get edit_edible_path(@edible)
     assert_response :success
   end
+  
+  test "should create edible" do
+    assert_difference "Edible.count" do
+      post edibles_path, params: { edible: {
+          name: 'Some name', description: 'Description...', price: '4.40'
+      } }
+    end
+  end
+  
+  test "should update edible" do
+    patch edible_url(@edible), params: { edible: {
+        name: 'new_name', description: 'new_description', price: '99.99'
+    } }
+    @edible.reload
+    assert_equal(@edible.name, 'new_name')
+    assert_redirected_to edible_path(@edible)
+  end
+  
+  test "should delete edible" do
+    assert_difference('Edible.count', -1) do
+      delete edible_path(@edible)
+    end
+  end
 
 end
