@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Edible</h2>
+
+<p>
+  <strong>Name:</strong>
+  <%= @edible.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @edible.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @edible.price %>
+</p>
+
+<%= link_to 'All Edibles', edibles_path %>

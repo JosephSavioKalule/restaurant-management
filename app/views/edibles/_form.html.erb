@@ -1,0 +1,22 @@
+<%= form_for(edible) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :edible_name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description, id: :edible_description %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.number_field :price, id: :edible_price, :step => 0.01 %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>
