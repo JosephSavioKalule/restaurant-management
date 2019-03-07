@@ -1,5 +1,5 @@
 class EdiblesController < ApplicationController
-  before_action :set_edible, only:[:show, :edit, :update]
+  before_action :set_edible, only:[:show, :edit, :update, :destroy]
   
   def index
     @edibles = Edible.all
@@ -44,6 +44,16 @@ class EdiblesController < ApplicationController
         format.html { render :edit }
         format.json { render json: @edible.errors, status: :unprocessable_entity }
       end
+    end
+  end
+  
+  def destroy
+    if @edible.destroy
+      notice = "Edible deleted!"
+      redirect_to edibles_path
+    else
+      notice = "Failed to delete edible!"
+      redirect_to edible_path(@edible)
     end
   end
   
