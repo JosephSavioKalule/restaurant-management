@@ -2,8 +2,8 @@
 
 one:
   is_paid: false
-  table_id: one
+  table: one
 
 two:
   is_paid: false
-  table_id: two
+  table: two
