@@ -14,13 +14,14 @@
 
 <table>
   <thead>
-    <th>ID</th><th>Time</th><th>Total</th>
+    <th>ID</th><th>Date</th><th>Time</th><th>Total</th>
   </thead>
   <tbody>
     <% @outstanding_orders.each do |order| %>
     <tr>
-      <td><%= link_to order.id, table_order_path(order.table, order) %></td>
-      <td><%= order.created_at %></td>
+      <td><%= link_to order.id, order_path(order) %></td>
+      <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
+      <td><%= order.created_at.strftime("%H:%M:%S") %></td>
       <td><%= order.total %></td>
     </tr>
     <% end %>
@@ -32,6 +33,9 @@
 </div>
 
 <div>
-  <%= link_to 'Edit', edit_table_path(@table) %> |
-  <%= link_to 'Back', tables_path %>
+  <%= link_to 'Edit', edit_table_path(@table) %> 
+  <% if @outstanding_orders.count == 0 %>
+  | <%= link_to 'Delete Table', @table, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  <br><%= link_to 'Back', tables_path %>
 </div>
