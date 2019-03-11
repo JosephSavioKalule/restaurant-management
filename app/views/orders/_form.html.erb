@@ -3,7 +3,7 @@
   if @order.new_record?
     @url = table_orders_path(@order.table)
   else
-    @url = table_order_path(@order.table, @order)
+    @url = order_path(@order)
   end
 %>
 
