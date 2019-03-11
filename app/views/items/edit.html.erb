@@ -1,0 +1,9 @@
+<h3>Order #<%= @item.order.id %></h3>
+
+<% @order_items.each do |i| %>
+  <% if i.id.equal?(@item.id) %>
+  <%= render 'form' %>
+  <% else %>
+  <li><%= i.quantity %> * <%= i.edible.name %></li>
+  <% end %>
+<% end %>

@@ -1,0 +1,26 @@
+<%
+  # set appropriate url
+  if @item.new_record?
+    @url = order_items_path(@item.order)
+  else
+    @url = item_path(@item)
+  end
+%>
+
+<%= form_with(model:@item, url:@url, local: true) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.collection_select(:edible_id, Edible.all, :id, :name, :prompt => 'Select') %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, id: :item_quantity %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

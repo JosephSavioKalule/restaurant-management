@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Table:</strong>
+  <%= @order.table_id %>
+</p>
+
+<p>Items : <%= @order_items.count %></p>
+
+<p>
+  <table>
+    <thead>
+      <th>Name</th><th>Quantity</th><th>Unit Price</th>
+    </thead>
+    <tbody>
+      <% @order_items.each do |item| %>
+      <% #byebug %>
+      <% next if item.new_record? %>
+      <tr>
+        <td><%= item.edible.name %></td>
+        <td><%= item.quantity %></td>
+        <td><%= item.edible.price %></td>
+      </tr>
+      <% end %>
+      <tr><td colspan="3"><%= render 'form' %></td></tr>
+    </tbody>
+  </table>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @order.total %>
+</p>
+
+<p>
+  <strong>Is paid:</strong>
+  <%= @order.is_paid %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', table_path(@order.table) %> <br>
+<%= link_to 'All Orders', orders_path %>
