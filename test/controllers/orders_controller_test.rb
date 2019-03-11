@@ -9,11 +9,13 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get orders_url
     assert_response :success
+    assert_select "title", "Orders | RestoMan"
   end
 
   test "should get new" do
     get new_table_order_path(@table)
     assert_response :success
+    assert_select "title", "Create Order | RestoMan"
   end
 
   test "should create order" do
@@ -27,6 +29,8 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
   test "should show order" do
     get order_path(@order)
     assert_response :success
+    
+    assert_select "title", "Order ##{@order.id} | RestoMan"
   end
 
   test "should get edit" do

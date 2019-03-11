@@ -6,13 +6,15 @@ class TablesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get tables_url
+    get tables_path
     assert_response :success
+    assert_select "title", "Tables | RestoMan"
   end
 
   test "should get new" do
-    get new_table_url
+    get new_table_path
     assert_response :success
+    assert_select "title", "Add Table | RestoMan"
   end
 
   test "should create table" do
@@ -26,11 +28,13 @@ class TablesControllerTest < ActionDispatch::IntegrationTest
   test "should show table" do
     get table_url(@table)
     assert_response :success
+    assert_select "title", "Table: #{@table.name} | RestoMan"
   end
 
   test "should get edit" do
     get edit_table_url(@table)
     assert_response :success
+    assert_select "title", "Edit Table ##{@table.id} | RestoMan"
   end
 
   test "should update table" do

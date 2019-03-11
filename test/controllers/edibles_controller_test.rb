@@ -8,21 +8,25 @@ class EdiblesControllerTest < ActionDispatch::IntegrationTest
   test "should get edibles index" do
     get edibles_path
     assert_response :success
+    assert_select "title", "Edibles | RestoMan"
   end
 
   test "should get show" do
     get edible_path(@edible)
     assert_response :success
+    assert_select "title", "#{@edible.name} | RestoMan"
   end
 
   test "should get new" do
     get new_edible_path
     assert_response :success
+    assert_select "title", "New Edible | RestoMan"
   end
 
   test "should get edit" do
     get edit_edible_path(@edible)
     assert_response :success
+    assert_select "title", "Edit Edible | RestoMan"
   end
   
   test "should create edible" do

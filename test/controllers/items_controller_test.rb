@@ -10,11 +10,13 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get new_order_item_path(@order)
     assert_response :success
+    assert_select "title", "Add Item | RestoMan"
   end
   
   test "should get edit" do
     get edit_item_path(@item)
     assert_response :success
+    assert_select "title", "Edit Item | RestoMan"
   end
 
   test "should create item" do
