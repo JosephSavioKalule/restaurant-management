@@ -6,9 +6,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Description</th>
       <th>Price</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -16,11 +15,9 @@
     <% @edibles.each do |edible| %>
       <tr>
         <td><%= edible.name %></td>
-        <td><%= edible.description %></td>
         <td><%= edible.price %></td>
         <td><%= link_to 'Show', edible %></td>
         <td><%= link_to 'Edit', edit_edible_path(edible) %></td>
-        <td><%= link_to 'Delete', edible, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
