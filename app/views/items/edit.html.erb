@@ -2,6 +2,10 @@
 
 <h3>Order #<%= @item.order.id %></h3>
 
+<% if @order_items.nil? %>
+<% @order_items = @item.order.items %>
+<% end %>
+
 <% @order_items.each do |i| %>
   <% if i.id.equal?(@item.id) %>
   <%= render 'form' %>
