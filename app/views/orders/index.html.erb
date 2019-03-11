@@ -18,9 +18,9 @@
         <td><%= order.table_id %></td>
         <td><%= order.total %></td>
         <td><%= order.is_paid %></td>
-        <td><%= link_to 'Show', table_order_path(order.table, order) %></td>
-        <td><%= link_to 'Edit', edit_table_order_path(order.table, order) %></td>
-        <td><%= link_to 'Destroy', table_order_path(order.table, order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', order_path(order) %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order_path(order), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
