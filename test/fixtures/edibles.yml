@@ -3,7 +3,9 @@
 one:
   name: MyString
   description: MyString
+  price: 10.00
 
 two:
   name: MyString
   description: MyString
+  price: 8.00
