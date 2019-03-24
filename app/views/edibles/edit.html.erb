@@ -1,7 +1,18 @@
 <% provide(:title, "Edit Edible") %>
 
-<h1>Edit Edible</h1>
-
-<%= render 'form', edible: @edible %>
-
-<%= link_to 'Back', edible_path(@edible) %>
+<div class="row">
+  <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+    <div class="card m-3">
+      <div class="card-body">
+        
+        <h4 class="card-title">Edit Edible</h1>
+        
+        <%= render 'form', edible: @edible %>
+        
+      </div>
+    </div>
+    
+    <%= link_to 'Back', edible_path(@edible), class: 'btn btn-outline-dark ml-3' %>
+    
+  </div>
+</div>

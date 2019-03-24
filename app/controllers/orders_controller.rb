@@ -30,7 +30,8 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to order_path(@order), notice: 'Order was successfully created.' }
+        flash[:success] = "Order was successfully created."
+        format.html { redirect_to order_path(@order) }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -44,8 +45,8 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to order_path(@order),
-                      notice: 'Order was successfully updated.' }
+        flash[:success] = "Order was successfully updated."
+        format.html { redirect_to order_path(@order) }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -59,7 +60,8 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to table_orders_path(@order.table_id), notice: 'Order was successfully destroyed.' }
+      flash[:success] = "Order was successfully destroyed."
+      format.html { redirect_to table_orders_path(@order.table_id) }
       format.json { head :no_content }
     end
   end

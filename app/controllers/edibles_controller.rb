@@ -21,7 +21,8 @@ class EdiblesController < ApplicationController
     
     respond_to do |format|
       if @edible.save
-        format.html { redirect_to @edible, notice: 'Edible was successfully created.' }
+        flash[:success] = "Edible was successfully created."
+        format.html { redirect_to @edible }
         format.json { render :show, status: :created, location: @edible }
       else
         # This line overrides the default rendering behavior,
@@ -38,7 +39,8 @@ class EdiblesController < ApplicationController
   def update
     respond_to do |format|
       if @edible.update(edible_params)
-        format.html { redirect_to @edible, notice: 'Edible was successfully updated.' }
+        flash[:success] = "Edible was successfully updated."
+        format.html { redirect_to @edible }
         format.json { render :show, status: :ok, location: @edible }
       else
         format.html { render :edit }
@@ -49,10 +51,10 @@ class EdiblesController < ApplicationController
   
   def destroy
     if @edible.destroy
-      notice = "Edible deleted!"
+      flash[:success] = "Edible deleted!"
       redirect_to edibles_path
     else
-      notice = "Failed to delete edible!"
+      flash[:danger] = "Failed to delete edible!"
       redirect_to edible_path(@edible)
     end
   end

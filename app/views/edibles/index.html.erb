@@ -1,30 +1,37 @@
 <% provide(:title, "Edibles") %>
 
-<p id="notice"><%= notice %></p>
-
-<h1>Edibles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @edibles.each do |edible| %>
-      <tr>
-        <td><%= edible.name %></td>
-        <td><%= edible.price %></td>
-        <td><%= link_to 'Show', edible %></td>
-        <td><%= link_to 'Edit', edit_edible_path(edible) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Edible', new_edible_path %>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card m-3">
+      <div class="card-body">
+        
+        <h4 class="card-title">Edibles</h4>
+        
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% @edibles.each do |edible| %>
+              <tr>
+                <td><%= edible.name %></td>
+                <td><%= edible.price %></td>
+                <td><%= link_to 'Show', edible %></td>
+                <td><%= link_to 'Edit', edit_edible_path(edible) %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+    
+    <%= link_to 'New Edible', new_edible_path, class: 'btn btn-outline-primary ml-3' %>
+    
+  </div>
+</div>

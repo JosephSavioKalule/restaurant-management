@@ -1,9 +1,22 @@
 <% provide(:title, "Edit Order") %>
 
-<h1>Edit Order</h1>
-
-<%= render 'form', order: @order %>
-
-<%= link_to 'Show', order_path(@order) %> |
-<%= link_to 'Back', table_orders_path(@order.table) %><br>
-<%= link_to 'All Orders', orders_path %>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card m-3">
+      <div class="card-body">
+        
+        <h4 class="card-title">Edit Order</h4>
+        
+        <%= render 'form', order: @order %>
+        
+      </div>
+    </div>
+    
+    <%= link_to 'Show', order_path(@order), class: 'btn btn-outline-primary ml-3' %> |
+    <%= link_to 'Back', table_orders_path(@order.table), class: 'btn btn-outline-dark' %>
+    <div class="m-3">
+      <%= link_to 'All Orders', orders_path, class: 'btn btn-outline-dark' %>
+    </div>
+    
+  </div>
+</div>

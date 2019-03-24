@@ -21,18 +21,18 @@
     </div>
   <% end %>
   
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.collection_select(:edible_id, Edible.all, :id, :name, :prompt => 'Select') %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity, id: :item_quantity %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit %>
+  <div class="field row">
+    <%= f.label :name, class: "col-sm-1 col-form-label" %>
+    <div class="col-sm-4">
+      <%= f.collection_select(:edible_id, Edible.all, :id, :name, {:prompt => 'Select'}, :class => "form-control") %>
+    </div>
+    <%= f.label :quantity, class: "col-sm-2 col-form-label" %>
+    <div class="col-sm-2">
+      <%= f.number_field :quantity, id: :item_quantity, class: "form-control" %>
+    </div>
+    <div class="actions col-sm-3">
+      <%= f.submit class: "btn btn-outline-success form-control" %>
+    </div>
   </div>
   
 <% end %>

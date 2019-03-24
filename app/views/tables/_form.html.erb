@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :table_name %>
+    <%= form.text_field :name, id: :table_name, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :number_of_places %>
-    <%= form.number_field :number_of_places, id: :table_number_of_places %>
+    <%= form.number_field :number_of_places, id: :table_number_of_places, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "form-control btn btn-outline-success mt-3" %>
   </div>
 <% end %>

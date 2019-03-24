@@ -21,12 +21,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :is_paid %>
-    <%= form.check_box :is_paid, id: :order_is_paid %>
+  <div class="field custom-control custom-checkbox">
+    <%= form.check_box :is_paid, id: :order_is_paid, class: "custom-control-input" %>
+    <%= form.label :is_paid, class: "custom-control-label" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-outline-success form-control" %>
   </div>
 <% end %>

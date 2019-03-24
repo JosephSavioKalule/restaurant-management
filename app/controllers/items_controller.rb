@@ -20,7 +20,8 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to order_path(@order), notice: 'Item was successfully added.' }
+        flash[:success] = "Item was successfully added."
+        format.html { redirect_to order_path(@order) }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -34,8 +35,8 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to order_path(@item.order),
-                      notice: 'Item was successfully updated.' }
+        flash[:success] = "Item was successfully updated."
+        format.html { redirect_to order_path(@item.order) }
         format.json { render :show, status: :ok, location: @item.order }
       else
         format.html { render :edit }
@@ -51,7 +52,8 @@ class ItemsController < ApplicationController
     @order = @item.order
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to order_path(@item.order), notice: 'Item was successfully removed.' }
+      flash[:success] = "Item was successfully removed."
+      format.html { redirect_to order_path(@item.order) }
       format.json { head :no_content }
     end
   end
