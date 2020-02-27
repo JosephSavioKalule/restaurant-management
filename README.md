@@ -4,7 +4,7 @@ This app can help you (barely) run a simple restaurant.
 
 * Ruby version: 2.3.4p301
 
-* Rails version: 5.1.6
+* Rails version: 5.1.7
 
 ## Getting started
 
