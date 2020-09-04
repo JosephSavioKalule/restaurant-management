@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.6.3'
 
 gem 'rails',        '5.1.7'
-gem 'puma',         '3.12.2'
+gem 'puma',         '3.12.6'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'
 gem 'coffee-rails', '4.2.2'
@@ -11,7 +11,7 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem 'bootstrap',    '4.3.1'
 gem 'sprockets',    '3.7.2'
-gem 'therubyracer'
+gem 'mini_racer'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
